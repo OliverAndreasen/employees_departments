@@ -10,3 +10,4 @@ public class FrontPageController {
         return "index";
     }
 }
+

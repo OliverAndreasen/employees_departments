@@ -33,9 +33,13 @@ public class DatabaseConnectionManager {
 //            e.printStackTrace();
 //        }
 
-        url = System.getenv("db.url");
-        username = System.getenv("db.username");
-        password = System.getenv("db.password");
+        url = "jdbc:mysql://localhost:3306/employees_departments";
+        username = "root";
+
+        //Mac
+        //password = "Keadb2022";
+        //Windows
+        password = "root";
 
         try {
             conn = DriverManager.getConnection(url, username, password);

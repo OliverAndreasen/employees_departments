@@ -12,6 +12,8 @@ public interface IRepository<T> {
     //Create
     public boolean create(T entity);
 
+    public List<T> getAllEntitiesFromDepartment(int id);
+
     //Update
     //Delete
 }

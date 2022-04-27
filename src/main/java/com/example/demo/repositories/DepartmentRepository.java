@@ -10,13 +10,12 @@ import java.util.List;
 
 
 public class DepartmentRepository implements IRepository<Department>{
-
     @Override
     public List<Department> getAllEntities() {
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Department> allDepartments = new ArrayList<Department>();
         try {
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM departments");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM employees_departments.departments");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 Department temp = new Department(
@@ -43,4 +42,10 @@ public class DepartmentRepository implements IRepository<Department>{
     public boolean create(Department entity) {
         return false;
     }
+
+    @Override
+    public List<Department> getAllEntitiesFromDepartment(int id) {
+        return null;
+    }
+
 }
